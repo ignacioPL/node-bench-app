@@ -1,0 +1,15 @@
+{
+  "name": "node-bench-app",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ignacio perez laborda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.4"
+  }
+}
+

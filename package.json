@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "ignacio perez laborda",
   "license": "ISC",
   "dependencies": {
-    "express": "4.16.4"
+    "big-integer": "1.6.41",
+    "express": "4.16.4",
+    "pg": "7.8.0"
   }
 }
-

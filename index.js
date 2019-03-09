@@ -11,21 +11,22 @@ const pool = new Pool({
 	port: 5432
 })
 const port = 3000
-const N = 100000
 const a = bigInt(Number.MAX_VALUE).times(bigInt(Number.MAX_VALUE))
 const b = bigInt(Number.MAX_VALUE).times(bigInt(Number.MAX_VALUE))
 
 app.get('/', (req,res) => res.send('hello world!'))
 
-app.get('/slow', (req,res) => {
-	for(let i = 0; i < N; i++){
-		let c = a.times(b)
+//slow --> 5100000
+app.get('/slow/:iter', (req,res) => {
+	let iter = req.params.iter
+	for(let i = 0; i < iter; i++){
+		let c = a.times(b).times(bigInt(i))
 	}
 	res.send('finish')
 })
 
 app.get('/all', (req,res) => {
-	pool.query('SELECT * FROM bench.events', (errors, results) =>{
+	pool.query('SELECT * FROM bench.events', (errors, results) => {
 		if(errors){
 			throw errors
 		}
